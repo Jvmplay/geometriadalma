@@ -1,0 +1,1124 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Base de conhecimento do @geometria.dalma: presença, respiração, meditação, sonhos lúcidos e símbolos, com práticas interativas.">
+<meta property="og:title" content="Geometria da Alma">
+<meta property="og:description" content="A geometria invisível da mente. Práticas de presença, respiração e meditação, separando ciência de tradição.">
+<meta name="theme-color" content="#070A11">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-100 -100 200 200'%3E%3Crect x='-100' y='-100' width='200' height='200' fill='%23070A11'/%3E%3Cg fill='none' stroke='%23C9A45C' stroke-width='7'%3E%3Ccircle r='40'/%3E%3Ccircle cx='40' r='40'/%3E%3Ccircle cx='-40' r='40'/%3E%3Ccircle cx='20' cy='34.6' r='40'/%3E%3Ccircle cx='-20' cy='34.6' r='40'/%3E%3Ccircle cx='20' cy='-34.6' r='40'/%3E%3Ccircle cx='-20' cy='-34.6' r='40'/%3E%3C/g%3E%3C/svg%3E">
+<title>Geometria da Alma</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Poppins:wght@300;400;500&display=swap">
+<style>
+/* Layout: página única noturna; um traço de geometria dourada percorre as seções como um caderno de observações. */
+:root {
+  color-scheme: dark;
+  --noite: #070A11;
+  --noite-2: #0E1524;
+  --noite-3: #141D31;
+  --ouro: #C9A45C;
+  --ouro-claro: #E8D3A2;
+  --creme: #EDE6D6;
+  --nevoa: #9C98AE;
+  --linha: rgba(201, 164, 92, 0.22);
+  --linha-fraca: rgba(237, 230, 214, 0.10);
+  --ciencia: #8FB6A8;
+  --tradicao: #B9A2D6;
+  --serif: "Lora", Georgia, "Times New Roman", serif;
+  --sans: "Poppins", "Helvetica Neue", Arial, sans-serif;
+  --gutter: clamp(16px, 4vw, 40px);
+  --largura: 1080px;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  background: var(--noite);
+  color: var(--creme);
+  font: 300 1rem/1.7 var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--ouro-claro); text-underline-offset: 3px; }
+a:hover { color: var(--ouro); }
+:focus-visible { outline: 2px solid var(--ouro); outline-offset: 3px; border-radius: 4px; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 500; text-wrap: balance; margin: 0; line-height: 1.2; }
+p { margin: 0; }
+.rotulo {
+  font: 500 0.72rem/1.6 var(--sans);
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--ouro);
+}
+.wrap { max-width: var(--largura); margin: 0 auto; padding-inline: var(--gutter); }
+
+/* ---------- topo ---------- */
+.topo {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+  background: rgba(7, 10, 17, 0.82);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--linha-fraca);
+}
+.topo .wrap { display: flex; align-items: center; gap: 24px; padding-block: 12px; }
+.marca { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--creme); flex-shrink: 0; }
+.marca svg { width: 30px; height: 30px; }
+.marca span { font: italic 500 1.1rem/1 var(--serif); }
+.menu { display: flex; gap: 22px; overflow-x: auto; scrollbar-width: none; margin-left: auto; min-width: 0; }
+.menu::-webkit-scrollbar { display: none; }
+.menu a {
+  font: 400 0.78rem/1 var(--sans); letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--nevoa); text-decoration: none; white-space: nowrap; padding-block: 6px;
+}
+.menu a:hover, .menu a.ativo { color: var(--ouro-claro); }
+@media (max-width: 640px) {
+  .topo .wrap { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .menu { margin-left: 0; width: 100%; gap: 18px; }
+}
+
+/* ---------- abertura ---------- */
+.abertura { position: relative; overflow: hidden; border-bottom: 1px solid var(--linha-fraca); }
+#ceu { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.abertura .wrap {
+  position: relative; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 32px; align-items: center; padding-block: clamp(48px, 9vw, 110px);
+}
+.abertura h1 { font-size: clamp(2.3rem, 5.6vw, 4.2rem); font-style: italic; font-weight: 400; margin-top: 18px; }
+.abertura h1 em { color: var(--ouro); font-style: italic; }
+.abertura .lead { margin-top: 22px; max-width: 34em; color: var(--creme); opacity: 0.86; font-size: 1.05rem; }
+.acoes { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+.botao {
+  display: inline-flex; align-items: center; gap: 10px; cursor: pointer;
+  font: 500 0.82rem/1 var(--sans); letter-spacing: 0.14em; text-transform: uppercase;
+  padding: 15px 22px; border-radius: 999px; text-decoration: none;
+  border: 1px solid var(--ouro); color: var(--ouro-claro); background: transparent;
+  transition: background .25s, color .25s;
+}
+.botao:hover { background: rgba(201, 164, 92, 0.12); color: var(--ouro-claro); }
+.botao.cheio { background: var(--ouro); color: var(--noite); }
+.botao.cheio:hover { background: var(--ouro-claro); color: var(--noite); }
+.botao[disabled] { opacity: .45; cursor: default; }
+.flor-palco { aspect-ratio: 1; width: 100%; max-width: 440px; justify-self: center; }
+.flor-palco canvas { width: 100%; height: 100%; display: block; }
+@media (max-width: 760px) {
+  .abertura .wrap { grid-template-columns: 1fr; }
+  .flor-palco { max-width: 300px; order: -1; }
+}
+
+/* ---------- seções ---------- */
+section.bloco { padding-block: clamp(56px, 8vw, 96px); border-bottom: 1px solid var(--linha-fraca); }
+.cabeca { display: grid; gap: 14px; max-width: 40em; margin-bottom: 40px; }
+.cabeca h2 { font-size: clamp(1.8rem, 3.6vw, 2.6rem); font-style: italic; font-weight: 400; }
+.cabeca p { color: var(--nevoa); }
+
+/* selos de origem do conhecimento */
+.selo {
+  display: inline-flex; align-items: center; gap: 6px;
+  font: 500 0.66rem/1 var(--sans); letter-spacing: 0.2em; text-transform: uppercase;
+  padding: 6px 10px; border-radius: 999px; border: 1px solid currentColor;
+}
+.selo::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.selo.ciencia { color: var(--ciencia); }
+.selo.tradicao { color: var(--tradicao); }
+.legenda-selos { display: flex; flex-wrap: wrap; gap: 10px 20px; align-items: center; color: var(--nevoa); font-size: 0.88rem; }
+
+/* comece por aqui */
+.passos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+.passo { border-top: 1px solid var(--linha); padding-top: 22px; display: grid; gap: 10px; align-content: start; }
+.passo .num { font: italic 500 1.4rem/1 var(--serif); color: var(--ouro); }
+.passo h3 { font-size: 1.35rem; }
+.passo p { color: var(--creme); opacity: .82; }
+.nota-intro { margin-top: 40px; max-width: 46em; padding: 22px 24px; background: var(--noite-2); border-left: 2px solid var(--ouro); border-radius: 0 10px 10px 0; }
+.nota-intro p + p { margin-top: 10px; }
+@media (max-width: 760px) { .passos { grid-template-columns: 1fr; } }
+
+/* trilhas */
+.trilhas { display: grid; gap: 14px; }
+details.trilha { background: var(--noite-2); border: 1px solid var(--linha-fraca); border-radius: 14px; overflow: hidden; }
+details.trilha[open] { border-color: var(--linha); }
+details.trilha summary {
+  list-style: none; cursor: pointer; display: grid; grid-template-columns: 56px minmax(0, 1fr) auto;
+  gap: 18px; align-items: center; padding: 20px 22px;
+}
+details.trilha summary::-webkit-details-marker { display: none; }
+.trilha .icone { width: 56px; height: 56px; }
+.trilha .titulo h3 { font-size: 1.35rem; }
+.trilha .titulo p { color: var(--nevoa); font-size: 0.92rem; margin-top: 4px; }
+.trilha .seta { width: 28px; height: 28px; border: 1px solid var(--linha); border-radius: 50%; display: grid; place-items: center; color: var(--ouro); transition: transform .3s; }
+details.trilha[open] .seta { transform: rotate(45deg); }
+.trilha .corpo { padding: 4px 22px 26px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 34px; }
+.trilha .corpo > div { min-width: 0; display: grid; gap: 8px; align-content: start; }
+.trilha .corpo h4 { margin: 0; display: flex; align-items: center; gap: 10px; font: 500 0.74rem/1.2 var(--sans); letter-spacing: 0.24em; text-transform: uppercase; color: var(--ouro); }
+.trilha .corpo p, .trilha .corpo li { color: var(--creme); opacity: .86; font-size: 0.97rem; }
+.trilha .corpo ol, .trilha .corpo ul { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; }
+.trilha .corpo .cuidado { grid-column: 1 / -1; font-size: 0.9rem; color: var(--nevoa); border-top: 1px dashed var(--linha-fraca); padding-top: 14px; }
+@media (max-width: 700px) {
+  .trilha .corpo { grid-template-columns: 1fr; }
+  details.trilha summary { grid-template-columns: 44px minmax(0, 1fr) auto; gap: 14px; padding: 16px; }
+  .trilha .icone { width: 44px; height: 44px; }
+  .trilha .corpo { padding: 4px 16px 22px; }
+}
+
+/* laboratório */
+.lab { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.painel { background: var(--noite-2); border: 1px solid var(--linha-fraca); border-radius: 16px; padding: 26px; display: grid; gap: 18px; align-content: start; min-width: 0; }
+.painel.largo { grid-column: 1 / -1; }
+.painel h3 { font-size: 1.45rem; font-style: italic; font-weight: 400; }
+.painel .desc { color: var(--nevoa); font-size: 0.95rem; }
+.controles { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.seg { display: inline-flex; border: 1px solid var(--linha); border-radius: 999px; overflow: hidden; }
+.seg button { background: none; border: 0; color: var(--nevoa); font: 400 0.82rem/1 var(--sans); padding: 11px 14px; cursor: pointer; }
+.seg button[aria-pressed="true"] { background: rgba(201, 164, 92, 0.16); color: var(--ouro-claro); }
+.respira-palco { display: grid; place-items: center; }
+.respira-palco svg { width: min(100%, 320px); height: auto; overflow: visible; }
+.fase { font: italic 400 1.9rem/1.1 var(--serif); fill: var(--creme); }
+.contador { font: 600 3rem/1 var(--serif); fill: var(--ouro); }
+.estatistica { color: var(--nevoa); font-size: 0.9rem; font-variant-numeric: tabular-nums; }
+.teste-palco { display: grid; place-items: center; position: relative; }
+.teste-palco canvas { width: min(100%, 300px); aspect-ratio: 1; height: auto; display: block; }
+.teste-palco .num-grande { position: absolute; inset: 0; display: grid; place-items: center; font: 600 4rem/1 var(--serif); color: var(--creme); pointer-events: none; }
+.resposta { display: grid; gap: 12px; }
+.resposta label { font-size: 0.95rem; }
+input[type="range"] { width: 100%; accent-color: var(--ouro); }
+.saida { font-family: var(--serif); font-style: italic; font-size: 1.1rem; color: var(--ouro-claro); min-height: 1.6em; }
+.quiz-pergunta { font: italic 400 1.5rem/1.35 var(--serif); min-height: 4em; }
+.quiz-barra { display: flex; gap: 6px; }
+.quiz-barra i { flex: 1; height: 3px; border-radius: 2px; background: var(--linha-fraca); }
+.quiz-barra i.feito { background: var(--ouro); }
+.resultado { display: grid; gap: 8px; }
+.resultado strong { font: italic 500 1.6rem/1.2 var(--serif); color: var(--ouro-claro); font-weight: 500; }
+@media (max-width: 760px) { .lab { grid-template-columns: 1fr; } .painel { padding: 20px; } }
+
+/* símbolos */
+.simbolos { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.carta { perspective: 1200px; min-height: 420px; }
+.carta button { all: unset; display: block; width: 100%; height: 100%; cursor: pointer; }
+.carta .gira { position: relative; width: 100%; height: 100%; min-height: 420px; transition: transform .7s cubic-bezier(.2,.7,.2,1); transform-style: preserve-3d; }
+.carta.virada .gira { transform: rotateY(180deg); }
+.face { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; border-radius: 16px; border: 1px solid var(--linha-fraca); background: var(--noite-2); padding: 22px; display: grid; gap: 12px; align-content: start; overflow: auto; }
+.face.frente { place-items: center; align-content: center; text-align: center; }
+.face.frente svg { width: 72%; height: auto; }
+.face.frente .romano { font: 600 1.2rem/1 var(--serif); color: var(--ouro-claro); letter-spacing: .1em; }
+.face.frente .dica { font-size: .72rem; letter-spacing: .26em; text-transform: uppercase; color: var(--nevoa); }
+.face.verso { transform: rotateY(180deg); background: var(--noite-3); }
+.face.verso h3 { font-size: 1.3rem; font-style: italic; font-weight: 400; color: var(--ouro-claro); }
+.face.verso p { font-size: .9rem; opacity: .88; }
+.face.verso .reflexao { font-family: var(--serif); font-style: italic; color: var(--ouro-claro); opacity: 1; border-top: 1px solid var(--linha); padding-top: 10px; }
+@media (max-width: 960px) { .simbolos { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .simbolos { grid-template-columns: 1fr; } .carta, .carta .gira { min-height: 400px; } }
+@media (prefers-reduced-motion: reduce) { .carta .gira { transition: none; } }
+
+/* mito ou fato */
+.mitos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.mito { background: var(--noite-2); border: 1px solid var(--linha-fraca); border-radius: 14px; padding: 20px 22px; display: grid; gap: 14px; align-content: start; min-width: 0; }
+.mito .afirma { font: italic 400 1.15rem/1.4 var(--serif); }
+.mito .opcoes { display: flex; gap: 8px; }
+.mito .opcoes button { cursor: pointer; font: 500 .74rem/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; padding: 10px 16px; border-radius: 999px; border: 1px solid var(--linha); background: none; color: var(--creme); }
+.mito .opcoes button:hover { border-color: var(--ouro); }
+.mito .veredito { font-size: .93rem; opacity: .9; display: grid; gap: 6px; }
+.mito .veredito b { font: 500 .74rem/1 var(--sans); letter-spacing: .24em; text-transform: uppercase; }
+.mito .veredito b.certo { color: var(--ciencia); }
+.mito .veredito b.errado { color: var(--tradicao); }
+@media (max-width: 700px) { .mitos { grid-template-columns: 1fr; } }
+
+/* glossário */
+.glossario { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 40px; margin: 0; }
+.glossario div { border-top: 1px solid var(--linha-fraca); padding-block: 16px; min-width: 0; }
+.glossario dt { font: italic 500 1.1rem/1.3 var(--serif); color: var(--ouro-claro); }
+.glossario dd { margin: 6px 0 0; font-size: .95rem; opacity: .86; }
+@media (max-width: 700px) { .glossario { grid-template-columns: 1fr; } }
+
+/* fontes e rodapé */
+.fontes { margin: 0; padding-left: 1.2em; display: grid; gap: 10px; font-size: .9rem; color: var(--nevoa); max-width: 60em; }
+.fontes a { word-break: break-word; }
+footer { padding-block: 56px 72px; }
+footer .wrap { display: grid; gap: 22px; }
+.aviso { max-width: 48em; font-size: .9rem; color: var(--nevoa); }
+.siga { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
+.siga p { font: italic 400 1.3rem/1.3 var(--serif); }
+
+/* barra de leitura */
+.topo { position: sticky; }
+.leitura { position: absolute; left: 0; bottom: -1px; height: 2px; width: 100%; background: var(--ouro); transform-origin: 0 50%; transform: scaleX(0); }
+
+/* prática do dia */
+.pratica-dia { margin-top: 34px; max-width: 30em; padding: 18px 20px; border: 1px solid var(--linha); border-radius: 14px; background: rgba(14, 21, 36, 0.72); display: grid; gap: 8px; }
+.pratica-dia p { font: italic 400 1.08rem/1.5 var(--serif); color: var(--ouro-claro); }
+
+/* timer de meditação */
+.timer-palco { position: relative; display: grid; place-items: center; }
+.timer-palco canvas { width: min(100%, 260px); aspect-ratio: 1; height: auto; display: block; }
+.timer-tempo { position: absolute; inset: 0; display: grid; place-items: center; font: 500 2.4rem/1 var(--serif); color: var(--creme); font-variant-numeric: tabular-nums; pointer-events: none; }
+.timer-msg { min-height: 1.6em; color: var(--nevoa); font-size: .92rem; text-align: center; }
+
+/* compasso */
+.compasso-palco canvas { width: min(100%, 300px); aspect-ratio: 1; height: auto; display: block; margin: 0 auto; }
+.compasso-passo { font: italic 400 1.05rem/1.5 var(--serif); color: var(--ouro-claro); min-height: 3em; }
+.compasso-num { font-variant-numeric: tabular-nums; color: var(--nevoa); font-size: .88rem; }
+
+/* desafio */
+.desafio { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr); gap: 40px; align-items: start; }
+.desafio-semente { position: sticky; top: 110px; display: grid; gap: 14px; justify-items: center; text-align: center; }
+.desafio-semente svg { width: 100%; max-width: 280px; height: auto; }
+.desafio-semente circle.dia { fill: transparent; stroke: rgba(237,230,214,.18); stroke-width: 1.4; transition: fill .6s, stroke .6s; }
+.desafio-semente circle.dia.feito { fill: rgba(201,164,92,.16); stroke: var(--ouro); }
+.desafio-contagem { font: italic 500 1.4rem/1.2 var(--serif); color: var(--ouro-claro); }
+.dias { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.dia-item { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 16px; align-items: start; padding: 16px 18px; background: var(--noite-2); border: 1px solid var(--linha-fraca); border-radius: 14px; }
+.dia-item.feito { border-color: var(--linha); }
+.dia-item input { appearance: none; -webkit-appearance: none; width: 26px; height: 26px; margin: 2px 0 0; border: 1.5px solid var(--ouro); border-radius: 50%; display: grid; place-items: center; cursor: pointer; background: transparent; }
+.dia-item input:checked { background: var(--ouro); }
+.dia-item input:checked::after { content: ""; width: 7px; height: 12px; border: solid var(--noite); border-width: 0 2.5px 2.5px 0; transform: translateY(-1px) rotate(45deg); }
+.dia-item label { cursor: pointer; display: grid; gap: 4px; }
+.dia-item .dia-num { font: 500 .7rem/1 var(--sans); letter-spacing: .26em; text-transform: uppercase; color: var(--ouro); }
+.dia-item .dia-tit { font: italic 500 1.12rem/1.3 var(--serif); }
+.dia-item .dia-desc { font-size: .93rem; opacity: .82; }
+.zerar { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; font-size: .85rem; color: var(--nevoa); }
+.link-discreto { background: none; border: 0; color: var(--nevoa); font: 400 .8rem/1 var(--sans); letter-spacing: .14em; text-transform: uppercase; text-decoration: underline; text-underline-offset: 4px; cursor: pointer; padding: 6px 0; }
+.link-discreto:hover { color: var(--ouro-claro); }
+@media (max-width: 760px) { .desafio { grid-template-columns: 1fr; gap: 28px; } .desafio-semente { position: static; } .desafio-semente svg { max-width: 220px; } }
+
+/* símbolos travados */
+.carta.travada .face.frente .dica { color: var(--ouro); }
+.carta.travada .gira { animation: none; }
+.carta.balanca .gira { animation: balanca .5s; }
+@keyframes balanca { 0%,100% { transform: rotate(0); } 25% { transform: rotate(-2deg); } 75% { transform: rotate(2deg); } }
+.aviso-revela { display: inline-flex; gap: 10px; align-items: center; padding: 10px 16px; border: 1px dashed var(--linha); border-radius: 999px; font-size: .88rem; color: var(--ouro-claro); font-variant-numeric: tabular-nums; }
+@media (prefers-reduced-motion: reduce) { .carta.balanca .gira { animation: none; } }
+</style>
+
+</head>
+<body>
+<header class="topo">
+  <div class="wrap">
+    <a class="marca" href="#inicio" aria-label="Geometria da Alma, início">
+      <svg viewBox="-100 -100 200 200" aria-hidden="true" id="marca-svg"></svg>
+      <span>Geometria da Alma</span>
+    </a>
+    <nav class="menu" aria-label="Seções">
+      <a href="#comece">Comece</a>
+      <a href="#trilhas">Trilhas</a>
+      <a href="#laboratorio">Laboratório</a>
+      <a href="#desafio">Desafio</a>
+      <a href="#simbolos">Símbolos</a>
+      <a href="#mitos">Mito ou fato</a>
+      <a href="#glossario">Glossário</a>
+    </nav>
+  </div>
+  <div class="leitura" id="leitura" aria-hidden="true"></div>
+</header>
+
+<main id="inicio">
+  <section class="abertura" aria-labelledby="titulo">
+    <canvas id="ceu" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <div>
+        <p class="rotulo">@geometria.dalma · base de conhecimento</p>
+        <h1 id="titulo">A geometria <em>invisível</em> da mente</h1>
+        <p class="lead">Um caderno aberto sobre atenção, respiração, meditação, sonhos e símbolos. Escrito por um estudante de engenharia que testa cada prática na vida real e separa o que a ciência já mediu do que vem das tradições.</p>
+        <div class="acoes">
+          <a class="botao cheio" href="#comece">Comece por aqui</a>
+          <a class="botao" href="#laboratorio">Respire comigo</a>
+        </div>
+        <div class="pratica-dia" aria-live="polite">
+          <span class="rotulo">Prática de hoje · <span id="pd-data"></span></span>
+          <p id="pd-texto">Pare por um instante e sinta o peso do seu corpo na cadeira.</p>
+        </div>
+      </div>
+      <div class="flor-palco"><canvas id="flor" aria-label="Flor da vida sendo desenhada" role="img"></canvas></div>
+    </div>
+  </section>
+
+  <section class="bloco" id="comece" aria-labelledby="t-comece">
+    <div class="wrap">
+      <div class="cabeca">
+        <p class="rotulo">Comece por aqui</p>
+        <h2 id="t-comece">Expandir a consciência começa por perceber</h2>
+        <p>Aqui, "expansão da consciência" quer dizer algo concreto: ampliar a atenção para o que acontece dentro e fora de você, momento a momento. Três movimentos sustentam todo o resto.</p>
+      </div>
+      <div class="passos">
+        <article class="passo">
+          <span class="num">I</span>
+          <h3>Perceber</h3>
+          <p>Notar onde a mente está agora. Grande parte do dia passa no piloto automático, e só dá para mudar o que se percebe.</p>
+        </article>
+        <article class="passo">
+          <span class="num">II</span>
+          <h3>Respirar</h3>
+          <p>A respiração é a única função automática do corpo que você também controla. Ela é a porta mais simples entre o corpo e a mente.</p>
+        </article>
+        <article class="passo">
+          <span class="num">III</span>
+          <h3>Observar padrões</h3>
+          <p>Com o tempo, você começa a ver o que se repete: pensamentos, reações, hábitos. É a "geometria" da sua mente.</p>
+        </article>
+      </div>
+      <div class="nota-intro">
+        <p class="legenda-selos">Ao longo do site, cada ideia leva um selo: <span class="selo ciencia">Ciência</span> quando há estudos publicados, <span class="selo tradicao">Tradição</span> quando vem de práticas espirituais e culturais.</p>
+        <p>Os dois têm valor, mas não são a mesma coisa. Saber de onde vem cada ideia é parte do caminho.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloco" id="trilhas" aria-labelledby="t-trilhas">
+    <div class="wrap">
+      <div class="cabeca">
+        <p class="rotulo">Trilhas</p>
+        <h2 id="t-trilhas">Seis portas de entrada</h2>
+        <p>Toque em uma trilha para abrir. Cada uma traz o que é, o que se sabe, uma prática de poucos minutos e os cuidados.</p>
+      </div>
+      <div class="trilhas" id="lista-trilhas"></div>
+    </div>
+  </section>
+
+  <section class="bloco" id="laboratorio" aria-labelledby="t-lab">
+    <div class="wrap">
+      <div class="cabeca">
+        <p class="rotulo">Laboratório</p>
+        <h2 id="t-lab">Experimente agora</h2>
+        <p>Três experimentos curtos, os mesmos do Instagram, para fazer aqui mesmo.</p>
+      </div>
+      <div class="lab">
+        <article class="painel largo" aria-labelledby="t-resp">
+          <h3 id="t-resp">O quadrado da respiração</h3>
+          <p class="desc">Siga o ponto dourado. Cada lado do quadrado é uma fase: inspirar, segurar, soltar, segurar vazio. Quatro voltas levam pouco mais de um minuto.</p>
+          <div class="controles">
+            <button class="botao cheio" id="resp-iniciar" type="button">Começar</button>
+            <div class="seg" role="group" aria-label="Segundos por fase">
+              <button type="button" data-seg="3" aria-pressed="false">3 s</button>
+              <button type="button" data-seg="4" aria-pressed="true">4 s</button>
+              <button type="button" data-seg="5" aria-pressed="false">5 s</button>
+            </div>
+            <span class="estatistica" id="resp-voltas" aria-live="polite">0 de 4 voltas</span>
+          </div>
+          <div class="respira-palco">
+            <svg viewBox="-20 -20 340 340" id="resp-svg" role="img" aria-label="Quadrado da respiração">
+              <rect x="20" y="20" width="260" height="260" fill="none" stroke="rgba(237,230,214,0.12)" stroke-width="2"/>
+              <path id="resp-traco" d="M20 20 H280 V280 H20 Z" fill="none" stroke="#C9A45C" stroke-width="3" stroke-linecap="round" stroke-dasharray="1040" stroke-dashoffset="1040"/>
+              <circle id="resp-ponto" cx="20" cy="20" r="9" fill="#E8D3A2"/>
+              <circle id="resp-halo" cx="20" cy="20" r="22" fill="rgba(201,164,92,0.18)"/>
+              <text class="fase" id="resp-fase" x="150" y="140" text-anchor="middle">Pronto?</text>
+              <text class="contador" id="resp-conta" x="150" y="200" text-anchor="middle"></text>
+            </svg>
+          </div>
+        </article>
+
+        <article class="painel" aria-labelledby="t-teste">
+          <h3 id="t-teste">O teste dos 10 segundos</h3>
+          <p class="desc">Tente não pensar em nada enquanto a flor se completa. Depois, conte com sinceridade quantos pensamentos apareceram.</p>
+          <div class="controles"><button class="botao cheio" id="teste-iniciar" type="button">Iniciar teste</button></div>
+          <div class="teste-palco">
+            <canvas id="teste-canvas" aria-hidden="true"></canvas>
+            <div class="num-grande" id="teste-num" aria-live="polite"></div>
+          </div>
+          <div class="resposta" id="teste-resposta" hidden>
+            <label for="pensamentos">Quantos pensamentos apareceram? <b id="pens-valor">3</b></label>
+            <input type="range" id="pensamentos" min="0" max="15" value="3">
+            <p class="saida" id="teste-saida"></p>
+          </div>
+        </article>
+
+        <article class="painel" aria-labelledby="t-quiz">
+          <h3 id="t-quiz">Você vive no piloto automático?</h3>
+          <p class="desc">Cinco perguntas. Responda pensando na última semana.</p>
+          <div class="quiz-barra" id="quiz-barra" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+          <div id="quiz-area">
+            <p class="quiz-pergunta" id="quiz-pergunta"></p>
+            <div class="controles" style="margin-top:16px">
+              <button class="botao cheio" type="button" id="quiz-sim">Sim, já</button>
+              <button class="botao" type="button" id="quiz-nao">Não</button>
+            </div>
+          </div>
+          <div class="resultado" id="quiz-resultado" hidden aria-live="polite">
+            <span class="rotulo">Seu resultado</span>
+            <strong id="quiz-titulo"></strong>
+            <p id="quiz-texto"></p>
+            <div class="controles"><button class="botao" type="button" id="quiz-refazer">Refazer</button></div>
+          </div>
+        </article>
+
+        <article class="painel" aria-labelledby="t-timer">
+          <h3 id="t-timer">Timer de meditação</h3>
+          <p class="desc">Escolha o tempo, feche os olhos e foque na respiração. Um sino suave marca o início e o fim.</p>
+          <div class="controles">
+            <button class="botao cheio" id="timer-iniciar" type="button">Começar</button>
+            <div class="seg" role="group" aria-label="Duração" id="timer-dur">
+              <button type="button" data-min="3" aria-pressed="false">3 min</button>
+              <button type="button" data-min="5" aria-pressed="true">5 min</button>
+              <button type="button" data-min="10" aria-pressed="false">10 min</button>
+            </div>
+          </div>
+          <div class="timer-palco">
+            <canvas id="timer-canvas" aria-hidden="true"></canvas>
+            <div class="timer-tempo" id="timer-tempo" aria-live="off">5:00</div>
+          </div>
+          <p class="timer-msg" id="timer-msg">Ative o som do celular para ouvir o sino.</p>
+        </article>
+
+        <article class="painel" aria-labelledby="t-comp">
+          <h3 id="t-comp">Construa a Flor da Vida</h3>
+          <p class="desc">Toda a flor nasce de uma única regra: um compasso com a mesma abertura. Avance círculo por círculo.</p>
+          <div class="compasso-palco"><canvas id="comp-canvas" role="img" aria-label="Construção da Flor da Vida"></canvas></div>
+          <label class="compasso-num" for="comp-range">Círculo <b id="comp-n">7</b> de 20</label>
+          <input type="range" id="comp-range" min="1" max="20" value="7">
+          <p class="compasso-passo" id="comp-texto"></p>
+          <div class="controles"><button class="botao" type="button" id="comp-play">Desenhar sozinho</button></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloco" id="desafio" aria-labelledby="t-desafio">
+    <div class="wrap">
+      <div class="cabeca">
+        <p class="rotulo">Desafio</p>
+        <h2 id="t-desafio">Sete dias, sete círculos</h2>
+        <p>Uma prática curta por dia. A cada dia concluído, um círculo da Semente da Vida se acende. Seu progresso fica salvo neste aparelho.</p>
+      </div>
+      <div class="desafio">
+        <div class="desafio-semente">
+          <svg viewBox="-100 -100 200 200" id="desafio-svg" aria-hidden="true"></svg>
+          <p class="desafio-contagem" id="desafio-contagem" aria-live="polite">0 de 7 dias</p>
+          <div class="zerar">
+            <button class="link-discreto" type="button" id="zerar">Recomeçar</button>
+            <span id="zerar-confirma" hidden>Apagar o progresso?
+              <button class="link-discreto" type="button" id="zerar-sim">Sim</button>
+              <button class="link-discreto" type="button" id="zerar-nao">Não</button></span>
+          </div>
+        </div>
+        <ol class="dias" id="lista-dias"></ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloco" id="simbolos" aria-labelledby="t-simb">
+    <div class="wrap">
+      <div class="cabeca">
+        <p class="rotulo">Símbolos</p>
+        <h2 id="t-simb">Quatro formas, quatro histórias</h2>
+        <p>Escolha a que chamar seu olhar primeiro e toque para virar. Do outro lado: de onde ela vem, o que se sabe de fato e uma pergunta para levar com você.</p>
+        <p class="aviso-revela" id="aviso-revela" hidden></p>
+      </div>
+      <div class="simbolos" id="lista-simbolos"></div>
+    </div>
+  </section>
+
+  <section class="bloco" id="mitos" aria-labelledby="t-mitos">
+    <div class="wrap">
+      <div class="cabeca">
+        <p class="rotulo">Mito ou fato</p>
+        <h2 id="t-mitos">O olhar do engenheiro</h2>
+        <p>O tema da consciência atrai muita afirmação bonita e pouco verificada. Teste o seu faro.</p>
+      </div>
+      <div class="mitos" id="lista-mitos"></div>
+    </div>
+  </section>
+
+  <section class="bloco" id="glossario" aria-labelledby="t-glos">
+    <div class="wrap">
+      <div class="cabeca">
+        <p class="rotulo">Glossário</p>
+        <h2 id="t-glos">Palavras para o caminho</h2>
+      </div>
+      <dl class="glossario">
+        <div><dt>Atenção plena (mindfulness)</dt><dd>Prestar atenção ao momento presente, de propósito e sem julgar. Base de programas como o MBSR, criado por Jon Kabat-Zinn em 1979.</dd></div>
+        <div><dt>Rede de modo padrão</dt><dd>Conjunto de regiões do cérebro que fica mais ativo quando não estamos focados numa tarefa, ligado a devaneios e pensamentos sobre nós mesmos.</dd></div>
+        <div><dt>Neuroplasticidade</dt><dd>A capacidade do cérebro de mudar sua estrutura e suas conexões com a experiência e o treino, ao longo de toda a vida.</dd></div>
+        <div><dt>Sonho lúcido</dt><dd>Sonho em que a pessoa sabe que está sonhando. Às vezes dá para influenciar o que acontece nele.</dd></div>
+        <div><dt>Proporção áurea (φ)</dt><dd>O número 1,618..., que aparece quando a razão entre o todo e a parte maior é igual à razão entre a parte maior e a menor. Ligado à sequência de Fibonacci.</dd></div>
+        <div><dt>Yantra</dt><dd>Diagrama geométrico usado como suporte de meditação nas tradições hindu e tântrica. O mais conhecido é o Sri Yantra.</dd></div>
+        <div><dt>Bindu</dt><dd>O ponto central de um yantra. Simboliza a origem, o ponto de onde tudo se expande.</dd></div>
+        <div><dt>Piloto automático</dt><dd>Agir por hábito, sem consciência do que se está fazendo. É útil para poupar energia, mas toma conta de boa parte do dia.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="bloco" id="fontes" aria-labelledby="t-fontes">
+    <div class="wrap">
+      <div class="cabeca">
+        <p class="rotulo">Fontes</p>
+        <h2 id="t-fontes">De onde vêm os dados</h2>
+      </div>
+      <ol class="fontes">
+        <li>Killingsworth, M. A. &amp; Gilbert, D. T. (2010). A wandering mind is an unhappy mind. <i>Science</i>. <a href="https://doi.org/10.1126/science.1192439" target="_blank" rel="noopener">doi.org/10.1126/science.1192439</a></li>
+        <li>Goyal, M. et al. (2014). Meditation programs for psychological stress and well-being. <i>JAMA Internal Medicine</i>. <a href="https://doi.org/10.1001/jamainternmed.2013.13018" target="_blank" rel="noopener">doi.org/10.1001/jamainternmed.2013.13018</a></li>
+        <li>Balban, M. Y. et al. (2023). Brief structured respiration practices enhance mood and reduce physiological arousal. <i>Cell Reports Medicine</i>. <a href="https://doi.org/10.1016/j.xcrm.2022.100895" target="_blank" rel="noopener">doi.org/10.1016/j.xcrm.2022.100895</a></li>
+        <li>Raichle, M. E. et al. (2001). A default mode of brain function. <i>PNAS</i>. <a href="https://doi.org/10.1073/pnas.98.2.676" target="_blank" rel="noopener">doi.org/10.1073/pnas.98.2.676</a></li>
+        <li>Brewer, J. A. et al. (2011). Meditation experience is associated with differences in default mode network activity and connectivity. <i>PNAS</i>. <a href="https://doi.org/10.1073/pnas.1112029108" target="_blank" rel="noopener">doi.org/10.1073/pnas.1112029108</a></li>
+        <li>LaBerge, S. et al. (1981). Lucid dreaming verified by volitional communication during REM sleep. <i>Perceptual and Motor Skills</i>. <a href="https://doi.org/10.2466/pms.1981.52.3.727" target="_blank" rel="noopener">doi.org/10.2466/pms.1981.52.3.727</a></li>
+        <li>Stumbrys, T. et al. (2012). Induction of lucid dreams: a systematic review of evidence. <i>Consciousness and Cognition</i>. <a href="https://doi.org/10.1016/j.concog.2012.07.003" target="_blank" rel="noopener">doi.org/10.1016/j.concog.2012.07.003</a></li>
+        <li>Pennebaker, J. W. &amp; Beall, S. K. (1986). Confronting a traumatic event: toward an understanding of inhibition and disease. <i>Journal of Abnormal Psychology</i>. <a href="https://doi.org/10.1037/0021-843X.95.3.274" target="_blank" rel="noopener">doi.org/10.1037/0021-843X.95.3.274</a></li>
+        <li>Swinton, J. et al. (2016). Novel Fibonacci and non-Fibonacci structure in the sunflower. <i>Royal Society Open Science</i>. <a href="https://doi.org/10.1098/rsos.160091" target="_blank" rel="noopener">doi.org/10.1098/rsos.160091</a></li>
+      </ol>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="siga">
+      <p>Novos experimentos toda semana.</p>
+      <a class="botao cheio" href="https://www.instagram.com/geometria.dalma/" target="_blank" rel="noopener">Seguir @geometria.dalma</a>
+    </div>
+    <p class="aviso">Conteúdo educativo, escrito por um estudante e não por um profissional de saúde. As práticas daqui não substituem acompanhamento médico ou psicológico. Se você está passando por um momento difícil, procure ajuda. No Brasil, o CVV atende 24 horas pelo telefone 188 e pelo site cvv.org.br.</p>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const OURO = "#C9A45C", OURO_C = "#E8D3A2";
+  const reduz = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---------------- geometria compartilhada ---------------- */
+  function hexPontos(aneis, passo) {
+    const p = [[0, 0]];
+    for (let r = 1; r <= aneis; r++) {
+      for (let k = 0; k < 6; k++) {
+        const a0 = Math.PI / 180 * (60 * k + 30), a1 = Math.PI / 180 * (60 * (k + 1) + 30);
+        const x0 = r * passo * Math.cos(a0), y0 = r * passo * Math.sin(a0);
+        const x1 = r * passo * Math.cos(a1), y1 = r * passo * Math.sin(a1);
+        for (let s = 0; s < r; s++) { const t = s / r; p.push([x0 + (x1 - x0) * t, y0 + (y1 - y0) * t]); }
+      }
+    }
+    return p;
+  }
+  const FORMAS = {
+    semente: () => {
+      const p = [["c", 0, 0, 1]];
+      for (let k = 0; k < 6; k++) p.push(["c", Math.cos(k * Math.PI / 3), Math.sin(k * Math.PI / 3), 1]);
+      p.push(["c", 0, 0, 2]); return { p, ext: 2 };
+    },
+    flor: () => {
+      const p = hexPontos(2, 1).map(([x, y]) => ["c", x, y, 1]);
+      p.push(["c", 0, 0, 3]); return { p, ext: 3 };
+    },
+    metatron: () => {
+      const cs = [[0, 0]];
+      [2, 4].forEach(d => { for (let k = 0; k < 6; k++) { const a = Math.PI / 180 * (60 * k + 90); cs.push([d * Math.cos(a), d * Math.sin(a)]); } });
+      const p = cs.map(([x, y]) => ["c", x, y, 1]);
+      for (let i = 0; i < cs.length; i++) for (let j = i + 1; j < cs.length; j++) p.push(["l", cs[i][0], cs[i][1], cs[j][0], cs[j][1]]);
+      return { p, ext: 5 };
+    },
+    yantra: () => {
+      const p = [["c", 0, 0, 1.08], ["c", 0, 0, 1.18]];
+      [[1, 1], [.86, 0], [.72, 1], [.6, 0], [.46, 1], [.34, 0], [.22, 1]].forEach(([s, up]) => {
+        const a0 = up ? -90 : 90, off = .08 * (up ? 1 : -1);
+        const v = [0, 1, 2].map(k => [s * Math.cos(Math.PI / 180 * (a0 + 120 * k)), s * Math.sin(Math.PI / 180 * (a0 + 120 * k)) + off]);
+        for (let k = 0; k < 3; k++) p.push(["l", v[k][0], v[k][1], v[(k + 1) % 3][0], v[(k + 1) % 3][1]]);
+      });
+      p.push(["d", 0, 0.0, 0.035]);
+      return { p, ext: 1.18 };
+    }
+  };
+
+  function desenharCanvas(ctx, forma, cx, cy, raio, prog, rot, cor, largura) {
+    const { p, ext } = FORMAS[forma]();
+    const e = raio / ext, n = p.length, tot = prog * n;
+    const cr = Math.cos(rot), sr = Math.sin(rot);
+    const T = (x, y) => [cx + (x * cr - y * sr) * e, cy + (x * sr + y * cr) * e];
+    ctx.strokeStyle = cor; ctx.fillStyle = cor; ctx.lineWidth = largura;
+    for (let i = 0; i < n && i < tot; i++) {
+      const fr = Math.min(1, tot - i), pr = p[i];
+      ctx.beginPath();
+      if (pr[0] === "c") {
+        const [X, Y] = T(pr[1], pr[2]); const a0 = rot - Math.PI / 2 + i * 0.65;
+        ctx.arc(X, Y, pr[3] * e, a0, a0 + Math.PI * 2 * fr); ctx.stroke();
+      } else if (pr[0] === "l") {
+        const [A, B] = [T(pr[1], pr[2]), T(pr[1] + (pr[3] - pr[1]) * fr, pr[2] + (pr[4] - pr[2]) * fr)];
+        ctx.moveTo(A[0], A[1]); ctx.lineTo(B[0], B[1]); ctx.stroke();
+      } else {
+        const [X, Y] = T(pr[1], pr[2]); ctx.arc(X, Y, pr[3] * e, 0, Math.PI * 2); ctx.fill();
+      }
+    }
+  }
+
+  function svgForma(forma, cor, larg) {
+    const { p, ext } = FORMAS[forma](); const e = 90 / ext;
+    return p.map(pr => {
+      if (pr[0] === "c") return `<circle cx="${(pr[1] * e).toFixed(2)}" cy="${(pr[2] * e).toFixed(2)}" r="${(pr[3] * e).toFixed(2)}" fill="none" stroke="${cor}" stroke-width="${larg}"/>`;
+      if (pr[0] === "l") return `<line x1="${(pr[1] * e).toFixed(2)}" y1="${(pr[2] * e).toFixed(2)}" x2="${(pr[3] * e).toFixed(2)}" y2="${(pr[4] * e).toFixed(2)}" stroke="${cor}" stroke-width="${larg}"/>`;
+      return `<circle cx="${(pr[1] * e).toFixed(2)}" cy="${(pr[2] * e).toFixed(2)}" r="${(pr[3] * e).toFixed(2)}" fill="${cor}"/>`;
+    }).join("");
+  }
+
+  function prepararCanvas(cv) {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const r = cv.getBoundingClientRect();
+    cv.width = Math.max(1, Math.round(r.width * dpr)); cv.height = Math.max(1, Math.round(r.height * dpr));
+    const ctx = cv.getContext("2d"); ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    return { ctx, w: r.width, h: r.height };
+  }
+
+  document.getElementById("marca-svg").innerHTML = svgForma("semente", OURO, 4);
+
+  /* ---------------- céu estrelado com paralaxe ---------------- */
+  const ceu = document.getElementById("ceu");
+  let estrelas = [], mx = 0, my = 0;
+  function gerarEstrelas() {
+    const { w, h } = prepararCanvas(ceu);
+    estrelas = Array.from({ length: Math.round(w * h / 5200) }, () => ({
+      x: Math.random() * w, y: Math.random() * h, r: Math.random() * 1.3 + .3,
+      z: Math.random() * .9 + .1, f: Math.random() * Math.PI * 2
+    }));
+  }
+  function pintarCeu(t) {
+    const ctx = ceu.getContext("2d"), w = ceu.clientWidth, h = ceu.clientHeight;
+    ctx.clearRect(0, 0, w, h);
+    const g = ctx.createRadialGradient(w * .72, h * .45, 10, w * .72, h * .45, Math.max(w, h) * .7);
+    g.addColorStop(0, "rgba(28,38,62,0.9)"); g.addColorStop(1, "rgba(7,10,17,0)");
+    ctx.fillStyle = g; ctx.fillRect(0, 0, w, h);
+    for (const s of estrelas) {
+      const a = .35 + .45 * Math.sin(t / 1400 + s.f);
+      ctx.fillStyle = `rgba(237,230,214,${(a * s.z).toFixed(3)})`;
+      ctx.beginPath(); ctx.arc(s.x + mx * s.z * 14, s.y + my * s.z * 14, s.r, 0, Math.PI * 2); ctx.fill();
+    }
+  }
+  window.addEventListener("pointermove", e => { mx = e.clientX / innerWidth - .5; my = e.clientY / innerHeight - .5; }, { passive: true });
+
+  /* ---------------- flor da vida da abertura ---------------- */
+  const flor = document.getElementById("flor");
+  let florTam = prepararCanvas(flor);
+  const inicio = performance.now();
+  function pintarFlor(t) {
+    const { ctx, w, h } = florTam;
+    ctx.clearRect(0, 0, w, h);
+    const el = (t - inicio) / 1000;
+    const prog = reduz ? 1 : Math.min(1, el / 6);
+    const ease = 1 - Math.pow(1 - prog, 3);
+    const rot = reduz ? 0 : el * 0.05 + mx * 0.35;
+    const r = Math.min(w, h) * .46;
+    ctx.save(); ctx.shadowColor = "rgba(201,164,92,0.55)"; ctx.shadowBlur = 14;
+    desenharCanvas(ctx, "flor", w / 2, h / 2, r, ease, rot, OURO, 1.3);
+    ctx.restore();
+    desenharCanvas(ctx, "semente", w / 2, h / 2, r * .22, ease, -rot * 2, "rgba(232,211,162,0.5)", 1);
+  }
+
+  function laco(t) {
+    pintarCeu(t); pintarFlor(t);
+    if (!reduz) requestAnimationFrame(laco);
+  }
+  gerarEstrelas();
+  requestAnimationFrame(laco);
+  let tmr; window.addEventListener("resize", () => { clearTimeout(tmr); tmr = setTimeout(() => { gerarEstrelas(); florTam = prepararCanvas(flor); if (reduz) laco(performance.now());
+    if (typeof tTam !== "undefined") { tTam = prepararCanvas(tCanvas); pintarTeste(1, 0); }
+    if (typeof tmTam !== "undefined") { tmTam = prepararCanvas(tmCanvas); if (!tmAtivo) pintarTimer(0, 0); }
+    if (typeof cpTam !== "undefined") { cpTam = prepararCanvas(cpCanvas); pintarComp(+cpRange.value); } }, 150); });
+
+  /* ---------------- trilhas ---------------- */
+  const TRILHAS = [
+    { forma: "semente", titulo: "Presença", sub: "Sair do piloto automático, um momento por vez",
+      oque: "Presença é perceber o que está acontecendo agora, no corpo, nos sentidos e nos pensamentos, em vez de viver entre lembranças e planos.",
+      sabe: ["ciencia", "Um estudo com mais de 2.000 pessoas (Harvard, 2010) indicou que a mente divaga em cerca de 47% do tempo acordado, e que as pessoas relataram estar menos felizes nesses momentos."],
+      pratica: ["Pare o que está fazendo.", "Nomeie 5 coisas que você vê, 4 que você ouve e 3 que você sente no corpo.", "Respire uma vez devagar e volte à atividade, notando a diferença."],
+      cuidado: "Presença não é estar sempre calmo. É perceber também o desconforto, sem fugir dele." },
+    { forma: "flor", titulo: "Respiração", sub: "A ponte entre o corpo e a mente",
+      oque: "A respiração acontece sozinha, mas também pode ser guiada. Mudar o ritmo, especialmente alongando a expiração, ajuda o corpo a sair do modo de alerta.",
+      sabe: ["ciencia", "Um estudo de Stanford (2023) comparou 5 minutos diários de exercícios respiratórios com meditação. Todos melhoraram o humor, e a respiração com expirações longas teve o maior efeito."],
+      pratica: ["Respiração quadrada: inspire 4 s, segure 4 s, solte 4 s, segure vazio 4 s.", "Faça 4 voltas. Use o quadrado guiado no Laboratório.", "Alternativa: inspire pelo nariz, dê uma segunda inspiração curta e solte o ar devagar pela boca."],
+      cuidado: "Se sentir tontura ou falta de ar, volte a respirar normalmente. Quem tem problemas cardíacos ou respiratórios deve consultar um médico antes de práticas de retenção." },
+    { forma: "metatron", titulo: "Meditação", sub: "Treinar a atenção como se treina um músculo",
+      oque: "Meditar é treinar a atenção: escolher um ponto de foco (a respiração, um som, o corpo), perceber quando a mente fugiu e voltar. Voltar é o exercício.",
+      sabe: ["ciencia", "Uma revisão de 47 estudos (JAMA, 2014) encontrou evidência moderada de que programas de meditação reduzem ansiedade, depressão e dor. Meditadores experientes mostram menor atividade da rede de modo padrão, ligada a devaneios."],
+      pratica: ["Sente-se com as costas eretas e marque 5 minutos.", "Sinta o ar entrando e saindo pelas narinas.", "Cada vez que se distrair, diga mentalmente \"pensando\" e volte. Sem brigar com a mente."],
+      cuidado: "Meditação complementa, mas não substitui tratamento. Em casos de trauma ou crises intensas, pratique com orientação profissional." },
+    { forma: "semente", titulo: "Sonhos lúcidos", sub: "Saber que se está sonhando",
+      oque: "Num sonho lúcido você percebe que está sonhando enquanto o sonho acontece. Por muito tempo isso foi visto como relato pessoal, até ser medido em laboratório.",
+      sabe: ["ciencia", "Em 1981, Stephen LaBerge mostrou que sonhadores lúcidos conseguem enviar sinais combinados com os olhos durante o sono REM. Revisões apontam que técnicas como testes de realidade e a MILD aumentam a frequência, com resultados variados."],
+      pratica: ["Durante o dia, pergunte várias vezes: \"estou sonhando?\" e olhe as mãos ou releia um texto.", "Ao acordar, anote o que lembrar dos sonhos.", "Antes de dormir, repita: \"da próxima vez que eu sonhar, vou perceber que estou sonhando\"."],
+      cuidado: "Não sacrifique horas de sono tentando induzir sonhos lúcidos. Sono de qualidade vem primeiro." },
+    { forma: "yantra", titulo: "Escrita e autoconhecimento", sub: "Colocar a mente no papel para enxergá-la",
+      oque: "Escrever sobre o que você pensa e sente cria distância. O que estava embolado na cabeça vira algo que dá para olhar de fora.",
+      sabe: ["ciencia", "Desde os estudos de James Pennebaker (1986), a escrita expressiva, 15 a 20 minutos sobre experiências marcantes, tem sido associada a benefícios de bem-estar, com efeitos que variam entre pessoas."],
+      pratica: ["À noite, escreva 3 linhas: o que aconteceu, o que você sentiu, o que percebeu.", "Uma vez por semana, releia e procure padrões.", "Pergunta-guia: \"o que se repetiu esta semana?\""],
+      cuidado: "Se escrever sobre algo doloroso trouxer sofrimento intenso, pare e converse com alguém de confiança ou um profissional." },
+    { forma: "flor", titulo: "Geometria sagrada", sub: "Formas que atravessam culturas",
+      oque: "Geometria sagrada é o nome dado a formas usadas por várias tradições como símbolos de ordem e unidade: círculos entrelaçados, triângulos, espirais.",
+      sabe: ["tradicao", "Essas formas têm valor simbólico e estético, e a matemática por trás delas é real (proporções, simetrias). Mas não há evidência científica de que tenham poderes próprios. Use-as como foco de contemplação e de beleza."],
+      pratica: ["Escolha um dos símbolos da seção Símbolos.", "Olhe para o centro dele por 2 minutos, respirando devagar.", "Depois, desenhe-o com compasso ou à mão livre. Desenhar é uma meditação em movimento."],
+      cuidado: "Desconfie de quem vende símbolos como solução para dinheiro, saúde ou relacionamentos." }
+  ];
+  const listaT = document.getElementById("lista-trilhas");
+  listaT.innerHTML = TRILHAS.map((t, i) => `
+    <details class="trilha" id="trilha-${i}">
+      <summary>
+        <svg class="icone" viewBox="-100 -100 200 200" aria-hidden="true">${svgForma(t.forma, OURO, 3)}</svg>
+        <div class="titulo"><h3>${t.titulo}</h3><p>${t.sub}</p></div>
+        <span class="seta" aria-hidden="true">+</span>
+      </summary>
+      <div class="corpo">
+        <div><h4>O que é</h4><p>${t.oque}</p></div>
+        <div><h4>O que se sabe <span class="selo ${t.sabe[0]}">${t.sabe[0] === "ciencia" ? "Ciência" : "Tradição"}</span></h4><p>${t.sabe[1]}</p></div>
+        <div style="grid-column:1/-1"><h4>Pratique agora</h4><ol>${t.pratica.map(x => `<li>${x}</li>`).join("")}</ol></div>
+        <p class="cuidado"><b>Cuidado:</b> ${t.cuidado}</p>
+      </div>
+    </details>`).join("");
+
+  /* ---------------- respiração quadrada ---------------- */
+  const FASES = ["Inspire", "Segure", "Solte", "Segure vazio"];
+  const CANTOS = [[20, 20], [280, 20], [280, 280], [20, 280]];
+  let segPorFase = 4, respAtivo = false, respInicio = 0, respRaf = 0;
+  const elFase = document.getElementById("resp-fase"), elConta = document.getElementById("resp-conta");
+  const elPonto = document.getElementById("resp-ponto"), elHalo = document.getElementById("resp-halo");
+  const elTraco = document.getElementById("resp-traco"), elVoltas = document.getElementById("resp-voltas");
+  const btnResp = document.getElementById("resp-iniciar");
+  document.querySelectorAll(".seg button").forEach(b => b.addEventListener("click", () => {
+    document.querySelectorAll(".seg button").forEach(x => x.setAttribute("aria-pressed", "false"));
+    b.setAttribute("aria-pressed", "true"); segPorFase = +b.dataset.seg;
+    if (respAtivo) pararResp(true);
+  }));
+  function posicionar(x, y) { elPonto.setAttribute("cx", x); elPonto.setAttribute("cy", y); elHalo.setAttribute("cx", x); elHalo.setAttribute("cy", y); }
+  function quadroResp(t) {
+    const el = Math.max(0, (t - respInicio) / 1000), volta = segPorFase * 4, total = volta * 4;
+    if (el >= total) { pararResp(false); elFase.textContent = "Feito"; elConta.textContent = "◬"; elVoltas.textContent = "4 de 4 voltas"; return; }
+    const emVolta = el % volta, fase = Math.floor(emVolta / segPorFase), f = (emVolta % segPorFase) / segPorFase;
+    const a = CANTOS[fase], b = CANTOS[(fase + 1) % 4];
+    posicionar(a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f);
+    elTraco.setAttribute("stroke-dashoffset", (1040 - 1040 * (emVolta / volta)).toFixed(1));
+    const halo = fase === 0 ? 14 + 18 * f : fase === 2 ? 32 - 18 * f : fase === 1 ? 32 : 14;
+    elHalo.setAttribute("r", halo.toFixed(1));
+    elFase.textContent = FASES[fase];
+    elConta.textContent = String(segPorFase - Math.floor(emVolta % segPorFase));
+    elVoltas.textContent = `${Math.floor(el / volta) + 1} de 4 voltas`;
+    respRaf = requestAnimationFrame(quadroResp);
+  }
+  function pararResp(reiniciarTexto) {
+    respAtivo = false; cancelAnimationFrame(respRaf); btnResp.textContent = "Começar";
+    if (reiniciarTexto) { elFase.textContent = "Pronto?"; elConta.textContent = ""; posicionar(20, 20); elTraco.setAttribute("stroke-dashoffset", "1040"); elVoltas.textContent = "0 de 4 voltas"; }
+  }
+  btnResp.addEventListener("click", () => {
+    if (respAtivo) { pararResp(true); return; }
+    respAtivo = true; btnResp.textContent = "Parar"; respInicio = performance.now();
+    respRaf = requestAnimationFrame(quadroResp);
+  });
+
+  /* ---------------- teste dos 10 segundos ---------------- */
+  const tCanvas = document.getElementById("teste-canvas"), tNum = document.getElementById("teste-num");
+  const tBtn = document.getElementById("teste-iniciar"), tResp = document.getElementById("teste-resposta");
+  const range = document.getElementById("pensamentos"), pv = document.getElementById("pens-valor"), saida = document.getElementById("teste-saida");
+  let tTam = prepararCanvas(tCanvas), tRaf = 0;
+  function pintarTeste(prog, rot) {
+    const { ctx, w, h } = tTam; ctx.clearRect(0, 0, w, h);
+    ctx.save(); ctx.shadowColor = "rgba(201,164,92,0.5)"; ctx.shadowBlur = 10;
+    desenharCanvas(ctx, "flor", w / 2, h / 2, Math.min(w, h) * .46, prog, rot, OURO, 1.2);
+    ctx.restore();
+  }
+  pintarTeste(1, 0);
+  tNum.textContent = "";
+  tBtn.addEventListener("click", () => {
+    cancelAnimationFrame(tRaf); tResp.hidden = true; tBtn.disabled = true; tBtn.textContent = "Não pense em nada…";
+    const t0 = performance.now();
+    const passo = t => {
+      const el = Math.max(0, (t - t0) / 1000);
+      if (el >= 10) {
+        pintarTeste(1, 0); tNum.textContent = ""; tBtn.disabled = false; tBtn.textContent = "Fazer de novo";
+        tResp.hidden = false; atualizarSaida(); return;
+      }
+      pintarTeste(el / 10, reduz ? 0 : el * .06);
+      tNum.textContent = String(10 - Math.floor(el));
+      tRaf = requestAnimationFrame(passo);
+    };
+    tRaf = requestAnimationFrame(passo);
+  });
+  function atualizarSaida() {
+    const n = +range.value; pv.textContent = n;
+    saida.textContent = n === 0 ? "Raro. Talvez você tenha entrado num estado de atenção bem focada. Repare se o próprio \"não pensar\" virou um pensamento."
+      : n <= 3 ? "Bom sinal de foco. E mesmo esses poucos pensamentos mostram como a mente gera ideias sozinha."
+      : n <= 7 ? "Normal. A mente produz pensamentos o tempo todo. Meditar é perceber que eles passam, não fazê-los parar."
+      : "Mente agitada hoje, e tudo bem. Cada pensamento que você notou foi um momento de atenção.";
+  }
+  range.addEventListener("input", atualizarSaida);
+
+  /* ---------------- quiz piloto automático ---------------- */
+  const PERG = ["Já chegou a um lugar sem lembrar do caminho?", "Já pegou o celular sem ter decidido pegar?", "Já terminou uma refeição sem sentir o gosto?", "Sente que os dias estão iguais e passando rápido?", "Já reagiu sem pensar e se arrependeu depois?"];
+  let qi = 0, sims = 0;
+  const qP = document.getElementById("quiz-pergunta"), qA = document.getElementById("quiz-area"), qR = document.getElementById("quiz-resultado");
+  const barras = [...document.querySelectorAll("#quiz-barra i")];
+  function mostrarQ() {
+    barras.forEach((b, i) => b.classList.toggle("feito", i < qi));
+    if (qi >= PERG.length) {
+      qA.hidden = true; qR.hidden = false;
+      const [tit, txt] = sims <= 1 ? ["Presente", "Você costuma estar onde está. Continue treinando para manter isso nos dias corridos."]
+        : sims <= 3 ? ["Modo misto", "Você alterna entre presença e piloto automático, como a maioria das pessoas. A trilha Presença tem um exercício de 1 minuto para isso."]
+        : ["Piloto automático ligado", "Bem-vindo ao clube. Perceber isso já é o primeiro passo. Comece pelo quadrado da respiração, uma vez por dia."];
+      document.getElementById("quiz-titulo").textContent = `${sims} de 5 · ${tit}`;
+      document.getElementById("quiz-texto").textContent = txt;
+      return;
+    }
+    qA.hidden = false; qR.hidden = true; qP.textContent = PERG[qi];
+  }
+  document.getElementById("quiz-sim").addEventListener("click", () => { sims++; qi++; mostrarQ(); });
+  document.getElementById("quiz-nao").addEventListener("click", () => { qi++; mostrarQ(); });
+  document.getElementById("quiz-refazer").addEventListener("click", () => { qi = 0; sims = 0; mostrarQ(); });
+  mostrarQ();
+
+  /* ---------------- símbolos ---------------- */
+  const SIMB = [
+    { forma: "semente", rom: "I", nome: "Semente da Vida",
+      txt: "Sete círculos de mesmo tamanho, um no centro e seis ao redor. Cada círculo passa pelo centro dos vizinhos. É o primeiro passo para desenhar a Flor da Vida, e muitas tradições associam seus sete círculos aos sete dias da criação.",
+      fato: "Matematicamente, é o arranjo mais compacto de círculos iguais em volta de um central, o mesmo padrão hexagonal dos favos de mel.",
+      refl: "O que está começando a germinar em você agora?" },
+    { forma: "flor", rom: "II", nome: "Flor da Vida",
+      txt: "Dezenove círculos entrelaçados dentro de um maior. Padrões assim aparecem em várias épocas: desenhos no Templo de Osíris, em Abidos (Egito), de datação incerta, e estudos de Leonardo da Vinci. O nome \"Flor da Vida\" se popularizou nos anos 1990, com autores da Nova Era.",
+      fato: "O padrão nasce de uma única regra repetida: um compasso com a mesma abertura. Ordem complexa a partir de algo simples.",
+      refl: "Que regra simples, repetida todo dia, está desenhando a sua vida?" },
+    { forma: "metatron", rom: "III", nome: "Cubo de Metatron",
+      txt: "Treze círculos ligados por todas as retas possíveis entre seus centros. O nome vem de Metatron, figura da tradição mística judaica. É associado a ordem, proteção e estrutura.",
+      fato: "Diz-se que ele contém os cinco sólidos de Platão. Projeções do cubo, do tetraedro e do octaedro aparecem nas linhas. O icosaedro e o dodecaedro exigem arestas ocultas que não estão todas ali.",
+      refl: "O que, na sua vida, precisa de mais estrutura?" },
+    { forma: "yantra", rom: "IV", nome: "Yantra",
+      txt: "Inspirado no Sri Yantra hindu, que tem nove triângulos entrelaçados em volta de um ponto central, o bindu. Os triângulos para cima e para baixo representam princípios complementares, como masculino e feminino.",
+      fato: "Desenhar um Sri Yantra com precisão é um problema geométrico difícil: vários triângulos precisam se cruzar exatamente nos mesmos pontos.",
+      refl: "Onde você precisa encontrar o seu centro?" }
+  ];
+  document.getElementById("lista-simbolos").innerHTML = SIMB.map((s, i) => `
+    <div class="carta" id="carta-${i}">
+      <button type="button" aria-pressed="false" aria-label="Virar símbolo ${s.rom}: ${s.nome}">
+        <div class="gira">
+          <div class="face frente">
+            <svg viewBox="-100 -100 200 200" aria-hidden="true">${svgForma(s.forma, OURO, 1.6)}</svg>
+            <span class="romano">${s.rom}</span>
+            <span class="dica">toque para revelar</span>
+          </div>
+          <div class="face verso">
+            <span class="rotulo">${s.rom} · <span class="selo tradicao" style="vertical-align:middle">Tradição</span></span>
+            <h3>${s.nome}</h3>
+            <p>${s.txt}</p>
+            <p><b>Fato:</b> ${s.fato}</p>
+            <p class="reflexao">${s.refl}</p>
+          </div>
+        </div>
+      </button>
+    </div>`).join("");
+  /* os significados são revelados junto com o post de domingo no Instagram */
+  const REVELA = new Date("2026-10-11T20:00:00-03:00").getTime();
+  const avisoRev = document.getElementById("aviso-revela");
+  const travado = () => Date.now() < REVELA;
+  function atualizarTrava() {
+    const t = travado();
+    document.querySelectorAll(".carta").forEach(c => {
+      c.classList.toggle("travada", t);
+      const d = c.querySelector(".dica"); d.textContent = t ? "revelação no domingo" : "toque para revelar";
+    });
+    if (t) {
+      const ms = REVELA - Date.now(), d = Math.floor(ms / 864e5), h = Math.floor(ms / 36e5) % 24, m = Math.floor(ms / 6e4) % 60;
+      avisoRev.hidden = false;
+      avisoRev.textContent = `◬ Os significados se revelam em ${d > 0 ? d + "d " : ""}${h}h ${String(m).padStart(2, "0")}min, junto com o post de domingo. Escolha o seu símbolo no Instagram.`;
+    } else avisoRev.hidden = true;
+  }
+  atualizarTrava(); setInterval(atualizarTrava, 30000);
+  document.querySelectorAll(".carta button").forEach(b => b.addEventListener("click", () => {
+    const c = b.closest(".carta");
+    if (travado()) { c.classList.remove("balanca"); void c.offsetWidth; c.classList.add("balanca"); return; }
+    const v = c.classList.toggle("virada"); b.setAttribute("aria-pressed", String(v));
+  }));
+
+  /* ---------------- mito ou fato ---------------- */
+  const MITOS = [
+    { a: "Usamos apenas 10% do cérebro.", fato: false, exp: "Exames de imagem mostram atividade em praticamente todas as regiões ao longo do dia. A ideia não tem base científica." },
+    { a: "A mente divaga em quase metade do tempo em que estamos acordados.", fato: true, exp: "No estudo de Killingsworth e Gilbert (2010), a mente estava divagando em cerca de 47% das amostras." },
+    { a: "A concha do náutilo segue a proporção áurea.", fato: false, exp: "Ela forma uma espiral logarítmica, mas as medições mostram uma taxa de crescimento diferente de 1,618. É um dos mitos mais repetidos sobre o tema." },
+    { a: "Girassóis organizam as sementes em espirais de Fibonacci.", fato: true, exp: "Na maioria dos casos, sim, com pares como 34 e 55. Um estudo com centenas de girassóis (2016) achou o padrão em cerca de 4 a cada 5 flores. As outras tinham padrões próximos ou diferentes." },
+    { a: "É possível saber que se está sonhando e se comunicar de dentro do sonho.", fato: true, exp: "Em 1981, Stephen LaBerge registrou sinais combinados com os olhos, enviados por sonhadores lúcidos durante o sono REM." },
+    { a: "Meditar substitui tratamento psicológico.", fato: false, exp: "A meditação tem benefícios moderados comprovados e pode complementar um tratamento, mas não o substitui." }
+  ];
+  document.getElementById("lista-mitos").innerHTML = MITOS.map((m, i) => `
+    <article class="mito" id="mito-${i}">
+      <p class="afirma">"${m.a}"</p>
+      <div class="opcoes" role="group" aria-label="Sua resposta">
+        <button type="button" data-r="1">Fato</button>
+        <button type="button" data-r="0">Mito</button>
+      </div>
+      <div class="veredito" hidden aria-live="polite"></div>
+    </article>`).join("");
+  document.querySelectorAll(".mito").forEach((el, i) => {
+    el.querySelectorAll(".opcoes button").forEach(b => b.addEventListener("click", () => {
+      const m = MITOS[i], acertou = (b.dataset.r === "1") === m.fato;
+      const v = el.querySelector(".veredito");
+      v.innerHTML = `<b class="${acertou ? "certo" : "errado"}">${acertou ? "Você acertou" : "Não foi dessa vez"} · ${m.fato ? "Fato" : "Mito"}</b><span>${m.exp}</span>`;
+      v.hidden = false;
+    }));
+  });
+
+  /* ---------------- armazenamento local seguro ---------------- */
+  const guardar = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} };
+  const ler = (k, padrao) => { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : padrao; } catch (e) { return padrao; } };
+
+  /* ---------------- prática do dia ---------------- */
+  const PRATICAS = [
+    "Antes de pegar o celular, respire três vezes devagar e pergunte: por que estou pegando?",
+    "Coma a primeira garfada de cada refeição de olhos fechados, sentindo só o sabor.",
+    "Em algum momento do dia, nomeie 5 coisas que você vê, 4 que ouve e 3 que sente.",
+    "Faça 4 voltas da respiração quadrada antes de dormir.",
+    "Hoje, pergunte \"estou sonhando?\" cinco vezes e olhe para as suas mãos.",
+    "Caminhe um trecho do seu dia sentindo cada passo tocar o chão.",
+    "Escreva três linhas antes de dormir: o que aconteceu, o que sentiu, o que percebeu.",
+    "Quando sentir irritação, espere uma respiração inteira antes de responder.",
+    "Olhe para o céu por um minuto inteiro, sem tirar foto.",
+    "Repare em quantas vezes sua mente vai para o futuro hoje. Só conte, sem julgar.",
+    "Ouça uma música inteira de olhos fechados, sem fazer mais nada.",
+    "Lave a louça ou tome banho como se fosse a primeira vez: sinta a água e a temperatura.",
+    "Desenhe a Semente da Vida com um copo e uma caneta. Sete círculos, devagar.",
+    "Ao acordar, antes de levantar, lembre o que sonhou e diga em voz baixa."
+  ];
+  const hoje = new Date();
+  const diaAno = Math.floor((hoje - new Date(hoje.getFullYear(), 0, 0)) / 864e5);
+  document.getElementById("pd-texto").textContent = PRATICAS[diaAno % PRATICAS.length];
+  document.getElementById("pd-data").textContent = hoje.toLocaleDateString("pt-BR", { weekday: "long", day: "numeric", month: "long" });
+
+  /* ---------------- barra de leitura ---------------- */
+  const barraLeitura = document.getElementById("leitura");
+  const atualizaLeitura = () => {
+    const max = document.documentElement.scrollHeight - innerHeight;
+    barraLeitura.style.transform = `scaleX(${max > 0 ? Math.min(1, scrollY / max) : 0})`;
+  };
+  addEventListener("scroll", atualizaLeitura, { passive: true }); atualizaLeitura();
+
+  /* ---------------- sino (Web Audio) ---------------- */
+  let audio = null;
+  function sino(atraso = 0) {
+    try {
+      audio = audio || new (window.AudioContext || window.webkitAudioContext)();
+      if (audio.state === "suspended") audio.resume();
+      const t0 = audio.currentTime + atraso;
+      [[220, .5], [440, .28], [660, .14], [880, .08], [1174, .05]].forEach(([f, g]) => {
+        const o = audio.createOscillator(), v = audio.createGain();
+        o.type = "sine"; o.frequency.value = f;
+        v.gain.setValueAtTime(0, t0); v.gain.linearRampToValueAtTime(g * .5, t0 + .02);
+        v.gain.exponentialRampToValueAtTime(.0001, t0 + 5.5);
+        o.connect(v).connect(audio.destination); o.start(t0); o.stop(t0 + 5.6);
+      });
+    } catch (e) {}
+  }
+
+  /* ---------------- timer de meditação ---------------- */
+  const tmCanvas = document.getElementById("timer-canvas"), tmTempo = document.getElementById("timer-tempo");
+  const tmBtn = document.getElementById("timer-iniciar"), tmMsg = document.getElementById("timer-msg");
+  let tmMin = 5, tmAtivo = false, tmInicio = 0, tmRaf = 0, wake = null;
+  let tmTam = prepararCanvas(tmCanvas);
+  const fmt = s => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, "0")}`;
+  function pintarTimer(frac, t) {
+    const { ctx, w, h } = tmTam; ctx.clearRect(0, 0, w, h);
+    const r = Math.min(w, h) * .47, cx = w / 2, cy = h / 2;
+    ctx.strokeStyle = "rgba(237,230,214,0.10)"; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2); ctx.stroke();
+    ctx.strokeStyle = OURO; ctx.lineWidth = 2.5;
+    ctx.beginPath(); ctx.arc(cx, cy, r, -Math.PI / 2, -Math.PI / 2 + Math.PI * 2 * frac); ctx.stroke();
+    const resp = reduz ? 1 : 1 + .06 * Math.sin(t / 1000 * Math.PI * 2 / 10);
+    desenharCanvas(ctx, "semente", cx, cy, r * .62 * resp, 1, t / 1000 * .03, "rgba(201,164,92,0.45)", 1.1);
+  }
+  pintarTimer(0, 0);
+  document.querySelectorAll("#timer-dur button").forEach(b => b.addEventListener("click", () => {
+    if (tmAtivo) return;
+    document.querySelectorAll("#timer-dur button").forEach(x => x.setAttribute("aria-pressed", "false"));
+    b.setAttribute("aria-pressed", "true"); tmMin = +b.dataset.min; tmTempo.textContent = fmt(tmMin * 60);
+  }));
+  function pararTimer(fim) {
+    tmAtivo = false; cancelAnimationFrame(tmRaf); tmBtn.textContent = "Começar";
+    try { wake && wake.release(); } catch (e) {} wake = null;
+    if (fim) { sino(); sino(1.6); sino(3.2); tmMsg.textContent = "Fim. Antes de abrir os olhos, perceba como você está agora."; tmTempo.textContent = "◬"; marcarPratica("meditou"); }
+    else { tmTempo.textContent = fmt(tmMin * 60); tmMsg.textContent = "Ative o som do celular para ouvir o sino."; pintarTimer(0, 0); }
+  }
+  tmBtn.addEventListener("click", async () => {
+    if (tmAtivo) { pararTimer(false); return; }
+    tmAtivo = true; tmBtn.textContent = "Parar"; tmInicio = performance.now(); sino();
+    tmMsg.textContent = "Respire. Quando a mente fugir, só volte.";
+    try { wake = await navigator.wakeLock.request("screen"); } catch (e) { wake = null; }
+    const total = tmMin * 60;
+    const passo = t => {
+      const el = Math.max(0, (t - tmInicio) / 1000);
+      if (el >= total) { pintarTimer(1, t); pararTimer(true); return; }
+      tmTempo.textContent = fmt(total - el); pintarTimer(el / total, t);
+      tmRaf = requestAnimationFrame(passo);
+    };
+    tmRaf = requestAnimationFrame(passo);
+  });
+
+  /* ---------------- construa a flor ---------------- */
+  const cpCanvas = document.getElementById("comp-canvas"), cpRange = document.getElementById("comp-range");
+  const cpN = document.getElementById("comp-n"), cpTxt = document.getElementById("comp-texto"), cpPlay = document.getElementById("comp-play");
+  let cpTam = prepararCanvas(cpCanvas);
+  const cpCirc = hexPontos(2, 1).map(([x, y]) => [x, y, 1]).concat([[0, 0, 3]]);
+  function textoPasso(n) {
+    if (n === 1) return "Abra o compasso e trace um círculo. Esta abertura não muda mais.";
+    if (n === 2) return "Ponha a ponta seca em qualquer ponto da borda e trace outro círculo igual.";
+    if (n < 7) return "Repita nos pontos onde as bordas se cruzam. Os círculos vão fechando uma volta.";
+    if (n === 7) return "Sete círculos: a Semente da Vida. Seis ao redor de um, sem nenhuma medida a mais.";
+    if (n < 19) return "Continue para fora, sempre nos cruzamentos. A segunda volta tem 12 círculos.";
+    if (n === 19) return "Dezenove círculos: a Flor da Vida. Tudo nasceu de uma única abertura do compasso.";
+    return "O círculo externo, com o triplo do raio, fecha a forma.";
+  }
+  function pintarComp(n) {
+    const { ctx, w, h } = cpTam; ctx.clearRect(0, 0, w, h);
+    const e = Math.min(w, h) * .46 / 3, cx = w / 2, cy = h / 2;
+    cpCirc.forEach(([x, y, r], i) => {
+      if (i >= n) return;
+      const ultimo = i === n - 1;
+      ctx.strokeStyle = ultimo ? OURO_C : "rgba(201,164,92,0.75)"; ctx.lineWidth = ultimo ? 2 : 1.2;
+      ctx.beginPath(); ctx.arc(cx + x * e, cy + y * e, r * e, 0, Math.PI * 2); ctx.stroke();
+      if (ultimo) { ctx.fillStyle = OURO_C; ctx.beginPath(); ctx.arc(cx + x * e, cy + y * e, 3, 0, Math.PI * 2); ctx.fill(); }
+    });
+    cpN.textContent = n; cpTxt.textContent = textoPasso(n);
+  }
+  pintarComp(7);
+  cpRange.addEventListener("input", () => pintarComp(+cpRange.value));
+  let cpTimer = 0;
+  cpPlay.addEventListener("click", () => {
+    clearInterval(cpTimer); let n = 1; cpRange.value = 1; pintarComp(1);
+    cpTimer = setInterval(() => { n++; cpRange.value = n; pintarComp(n); if (n >= 20) clearInterval(cpTimer); }, reduz ? 200 : 650);
+  });
+
+  /* ---------------- desafio de 7 dias ---------------- */
+  const DIAS = [
+    ["Respiração quadrada", "Faça 4 voltas do quadrado da respiração, ao acordar ou antes de dormir."],
+    ["Cinco sentidos", "Uma vez no dia: 5 coisas que você vê, 4 que ouve, 3 que sente, 2 cheiros, 1 sabor."],
+    ["Cinco minutos de meditação", "Use o timer do Laboratório. Quando a mente fugir, só volte para a respiração."],
+    ["Uma refeição em silêncio", "Coma uma refeição sem celular nem TV, prestando atenção em cada sabor."],
+    ["Teste de realidade", "Pergunte \"estou sonhando?\" cinco vezes durante o dia e olhe para as mãos."],
+    ["Três linhas", "Antes de dormir, escreva: o que aconteceu, o que senti, o que percebi."],
+    ["Desenhe a Semente", "Desenhe a Semente da Vida à mão ou com um copo. Sete círculos, devagar."]
+  ];
+  let feitos = ler("gda-desafio", [false, false, false, false, false, false, false]);
+  if (!Array.isArray(feitos) || feitos.length !== 7) feitos = [false, false, false, false, false, false, false];
+  const dSvg = document.getElementById("desafio-svg");
+  const centros = [[0, 0]].concat([0, 1, 2, 3, 4, 5].map(k => [Math.cos(k * Math.PI / 3 - Math.PI / 2), Math.sin(k * Math.PI / 3 - Math.PI / 2)]));
+  dSvg.innerHTML = `<circle cx="0" cy="0" r="90" fill="none" stroke="rgba(201,164,92,0.3)" stroke-width="1.2"/>` +
+    centros.map(([x, y], i) => `<circle class="dia" data-i="${i}" cx="${(x * 45).toFixed(2)}" cy="${(y * 45).toFixed(2)}" r="45"/>`).join("");
+  const lista = document.getElementById("lista-dias");
+  lista.innerHTML = DIAS.map(([t, d], i) => `
+    <li class="dia-item" id="dia-${i}">
+      <input type="checkbox" id="chk-${i}">
+      <label for="chk-${i}"><span class="dia-num">Dia ${geoRom(i)}</span><span class="dia-tit">${t}</span><span class="dia-desc">${d}</span></label>
+    </li>`).join("");
+  function geoRom(i) { return ["I", "II", "III", "IV", "V", "VI", "VII"][i]; }
+  function renderDesafio() {
+    feitos.forEach((f, i) => {
+      document.getElementById("chk-" + i).checked = f;
+      document.getElementById("dia-" + i).classList.toggle("feito", f);
+      dSvg.querySelector(`circle.dia[data-i="${i}"]`).classList.toggle("feito", f);
+    });
+    const n = feitos.filter(Boolean).length;
+    document.getElementById("desafio-contagem").textContent = n === 7 ? "Semente completa. 7 de 7 dias." : `${n} de 7 dias`;
+  }
+  DIAS.forEach((_, i) => document.getElementById("chk-" + i).addEventListener("change", e => { feitos[i] = e.target.checked; guardar("gda-desafio", feitos); renderDesafio(); }));
+  const zConf = document.getElementById("zerar-confirma");
+  document.getElementById("zerar").addEventListener("click", () => { zConf.hidden = false; });
+  document.getElementById("zerar-nao").addEventListener("click", () => { zConf.hidden = true; });
+  document.getElementById("zerar-sim").addEventListener("click", () => { feitos = feitos.map(() => false); guardar("gda-desafio", feitos); zConf.hidden = true; renderDesafio(); });
+  renderDesafio();
+  function marcarPratica() {}
+
+  /* ---------------- menu ativo ---------------- */
+  const links = [...document.querySelectorAll(".menu a")];
+  const alvos = links.map(a => document.querySelector(a.getAttribute("href")));
+  const io = new IntersectionObserver(ents => {
+    ents.forEach(e => { if (e.isIntersecting) { links.forEach(l => l.classList.toggle("ativo", l.getAttribute("href") === "#" + e.target.id)); } });
+  }, { rootMargin: "-45% 0px -50% 0px" });
+  alvos.forEach(a => a && io.observe(a));
+})();
+</script>
+
+</body>
+</html>
