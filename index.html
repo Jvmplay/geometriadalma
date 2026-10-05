@@ -6,6 +6,12 @@
 <meta name="description" content="Base de conhecimento do @geometria.dalma: presença, respiração, meditação, sonhos lúcidos e símbolos, com práticas interativas.">
 <meta property="og:title" content="Geometria da Alma">
 <meta property="og:description" content="A geometria invisível da mente. Práticas de presença, respiração e meditação, separando ciência de tradição.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jvmplay.github.io/geometriadalma/">
+<meta property="og:image" content="https://jvmplay.github.io/geometriadalma/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#070A11">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-100 -100 200 200'%3E%3Crect x='-100' y='-100' width='200' height='200' fill='%23070A11'/%3E%3Cg fill='none' stroke='%23C9A45C' stroke-width='7'%3E%3Ccircle r='40'/%3E%3Ccircle cx='40' r='40'/%3E%3Ccircle cx='-40' r='40'/%3E%3Ccircle cx='20' cy='34.6' r='40'/%3E%3Ccircle cx='-20' cy='34.6' r='40'/%3E%3Ccircle cx='20' cy='-34.6' r='40'/%3E%3Ccircle cx='-20' cy='-34.6' r='40'/%3E%3C/g%3E%3C/svg%3E">
 <title>Geometria da Alma</title>
@@ -105,7 +111,9 @@ p { margin: 0; }
 .flor-palco canvas { width: 100%; height: 100%; display: block; }
 @media (max-width: 760px) {
   .abertura .wrap { grid-template-columns: 1fr; }
-  .flor-palco { max-width: 300px; order: -1; }
+  .flor-palco { max-width: 210px; order: -1; }
+  .abertura .wrap { padding-block: 28px 44px; gap: 18px; }
+  .abertura .lead { font-size: .97rem; margin-top: 14px; }
 }
 
 /* ---------- seções ---------- */
@@ -240,6 +248,60 @@ footer .wrap { display: grid; gap: 22px; }
 .siga { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
 .siga p { font: italic 400 1.3rem/1.3 var(--serif); }
 
+/* seletor de tempo */
+.tempo { margin-top: 30px; display: grid; gap: 12px; }
+.tempo-opcoes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; max-width: 34em; }
+.tempo-opcoes a {
+  display: grid; gap: 6px; padding: 16px 14px; border-radius: 14px; text-decoration: none;
+  border: 1px solid var(--linha); background: rgba(14, 21, 36, 0.72); color: var(--creme);
+  transition: border-color .25s, transform .25s, background .25s;
+}
+.tempo-opcoes a:hover, .tempo-opcoes a:focus-visible { border-color: var(--ouro); background: rgba(201,164,92,0.10); transform: translateY(-2px); }
+.tempo-opcoes a:active { transform: scale(.97); }
+.tempo-opcoes .qt { font: italic 500 1.35rem/1 var(--serif); color: var(--ouro-claro); }
+.tempo-opcoes .oq { font-size: .8rem; color: var(--nevoa); line-height: 1.35; }
+.painel.destaque { animation: brilho 1.6s ease-out; }
+@keyframes brilho { 0% { box-shadow: 0 0 0 0 rgba(201,164,92,.55); border-color: var(--ouro); } 100% { box-shadow: 0 0 0 18px rgba(201,164,92,0); } }
+
+/* barra inferior (celular) */
+.barra-app { display: none; }
+@media (max-width: 760px) {
+  .topo .menu { display: none; }
+  .topo .wrap { flex-direction: row; align-items: center; }
+  body { padding-bottom: calc(70px + env(safe-area-inset-bottom, 0px)); }
+  .barra-app {
+    display: grid; grid-template-columns: repeat(5, minmax(0, 1fr));
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 30;
+    padding: 6px 6px calc(6px + env(safe-area-inset-bottom, 0px));
+    background: rgba(7, 10, 17, 0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid var(--linha-fraca);
+  }
+  .barra-app a {
+    display: grid; justify-items: center; gap: 4px; padding: 6px 2px; text-decoration: none;
+    color: var(--nevoa); font: 400 .66rem/1 var(--sans); letter-spacing: .06em; border-radius: 12px;
+    -webkit-tap-highlight-color: transparent; transition: color .2s, background .2s;
+  }
+  .barra-app a svg { width: 24px; height: 24px; }
+  .barra-app a.ativo { color: var(--ouro-claro); background: rgba(201,164,92,0.10); }
+  .barra-app a:active { transform: scale(.94); }
+  .tempo-opcoes a { padding: 14px 10px; }
+  .tempo-opcoes .qt { font-size: 1.15rem; }
+  /* mito ou fato desliza para o lado */
+  .mitos { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 12px; padding-bottom: 8px; margin-inline: calc(var(--gutter) * -1); padding-inline: var(--gutter); scrollbar-width: none; }
+  .mitos::-webkit-scrollbar { display: none; }
+  .mito { flex: 0 0 86%; scroll-snap-align: center; }
+  .dica-deslize { display: block !important; }
+  .botao { padding: 16px 22px; }
+}
+.dica-deslize { display: none; font-size: .78rem; letter-spacing: .2em; text-transform: uppercase; color: var(--ouro); margin-top: -20px; margin-bottom: 18px; }
+
+/* entrada suave das seções (sempre visíveis; só deslizam) */
+@media (prefers-reduced-motion: no-preference) {
+  .entra { transition: transform .8s cubic-bezier(.2,.7,.2,1); }
+  .entra.abaixo { transform: translateY(26px); }
+}
+
+section.bloco, .painel, #inicio { scroll-margin-top: 76px; }
 /* barra de leitura */
 .topo { position: sticky; }
 .leitura { position: absolute; left: 0; bottom: -1px; height: 2px; width: 100%; background: var(--ouro); transform-origin: 0 50%; transform: scaleX(0); }
@@ -319,9 +381,13 @@ footer .wrap { display: grid; gap: 22px; }
         <p class="rotulo">@geometria.dalma · base de conhecimento</p>
         <h1 id="titulo">A geometria <em>invisível</em> da mente</h1>
         <p class="lead">Um caderno aberto sobre atenção, respiração, meditação, sonhos e símbolos. Escrito por um estudante de engenharia que testa cada prática na vida real e separa o que a ciência já mediu do que vem das tradições.</p>
-        <div class="acoes">
-          <a class="botao cheio" href="#comece">Comece por aqui</a>
-          <a class="botao" href="#laboratorio">Respire comigo</a>
+        <div class="tempo">
+          <span class="rotulo">Quanto tempo você tem agora?</span>
+          <nav class="tempo-opcoes" aria-label="Escolha por tempo disponível">
+            <a href="#p-resp" data-destaque="p-resp"><span class="qt">1 min</span><span class="oq">Respirar no quadrado</span></a>
+            <a href="#p-timer" data-destaque="p-timer"><span class="qt">5 min</span><span class="oq">Meditar com o timer</span></a>
+            <a href="#comece"><span class="qt">Mais</span><span class="oq">Entender por onde começar</span></a>
+          </nav>
         </div>
         <div class="pratica-dia" aria-live="polite">
           <span class="rotulo">Prática de hoje · <span id="pd-data"></span></span>
@@ -382,7 +448,7 @@ footer .wrap { display: grid; gap: 22px; }
         <p>Três experimentos curtos, os mesmos do Instagram, para fazer aqui mesmo.</p>
       </div>
       <div class="lab">
-        <article class="painel largo" aria-labelledby="t-resp">
+        <article class="painel largo" id="p-resp" aria-labelledby="t-resp">
           <h3 id="t-resp">O quadrado da respiração</h3>
           <p class="desc">Siga o ponto dourado. Cada lado do quadrado é uma fase: inspirar, segurar, soltar, segurar vazio. Quatro voltas levam pouco mais de um minuto.</p>
           <div class="controles">
@@ -440,7 +506,7 @@ footer .wrap { display: grid; gap: 22px; }
           </div>
         </article>
 
-        <article class="painel" aria-labelledby="t-timer">
+        <article class="painel" id="p-timer" aria-labelledby="t-timer">
           <h3 id="t-timer">Timer de meditação</h3>
           <p class="desc">Escolha o tempo, feche os olhos e foque na respiração. Um sino suave marca o início e o fim.</p>
           <div class="controles">
@@ -513,6 +579,7 @@ footer .wrap { display: grid; gap: 22px; }
         <h2 id="t-mitos">O olhar do engenheiro</h2>
         <p>O tema da consciência atrai muita afirmação bonita e pouco verificada. Teste o seu faro.</p>
       </div>
+      <span class="dica-deslize" aria-hidden="true">deslize para o lado →</span>
       <div class="mitos" id="lista-mitos"></div>
     </div>
   </section>
@@ -556,6 +623,14 @@ footer .wrap { display: grid; gap: 22px; }
     </div>
   </section>
 </main>
+
+<nav class="barra-app" aria-label="Navegação rápida">
+  <a href="#inicio" data-alvo="inicio"><svg viewBox="-12 -12 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.4"><circle r="5"/><circle cx="5" r="5"/><circle cx="-5" r="5"/></g></svg>Início</a>
+  <a href="#p-resp" data-alvo="laboratorio"><svg viewBox="-12 -12 24 24" aria-hidden="true"><rect x="-7" y="-7" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="-7" cy="-7" r="2" fill="currentColor"/></svg>Respirar</a>
+  <a href="#p-timer" data-alvo="timer"><svg viewBox="-12 -12 24 24" aria-hidden="true"><circle r="8" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M0 -4 V0 L3 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>Timer</a>
+  <a href="#desafio" data-alvo="desafio"><svg viewBox="-12 -12 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.3"><circle r="4"/><circle cy="-4" r="4"/><circle cy="4" r="4"/><circle cx="3.5" cy="-2" r="4"/><circle cx="-3.5" cy="2" r="4"/></g></svg>Desafio</a>
+  <a href="#simbolos" data-alvo="simbolos"><svg viewBox="-12 -12 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M0 -8 L7 4 H-7 Z"/><path d="M0 8 L-7 -4 H7 Z"/></g></svg>Símbolos</a>
+</nav>
 
 <footer>
   <div class="wrap">
@@ -696,12 +771,16 @@ footer .wrap { display: grid; gap: 22px; }
     desenharCanvas(ctx, "semente", w / 2, h / 2, r * .22, ease, -rot * 2, "rgba(232,211,162,0.5)", 1);
   }
 
+  let aberturaVisivel = true, lacoAtivo = false;
   function laco(t) {
     pintarCeu(t); pintarFlor(t);
-    if (!reduz) requestAnimationFrame(laco);
+    if (!reduz && aberturaVisivel && !document.hidden) requestAnimationFrame(laco); else lacoAtivo = false;
   }
+  function iniciarLaco() { if (!lacoAtivo && !reduz) { lacoAtivo = true; requestAnimationFrame(laco); } }
   gerarEstrelas();
-  requestAnimationFrame(laco);
+  lacoAtivo = true; requestAnimationFrame(laco);
+  new IntersectionObserver(es => { aberturaVisivel = es[0].isIntersecting; if (aberturaVisivel) iniciarLaco(); }).observe(document.querySelector(".abertura"));
+  document.addEventListener("visibilitychange", () => { if (!document.hidden && aberturaVisivel) iniciarLaco(); });
   let tmr; window.addEventListener("resize", () => { clearTimeout(tmr); tmr = setTimeout(() => { gerarEstrelas(); florTam = prepararCanvas(flor); if (reduz) laco(performance.now());
     if (typeof tTam !== "undefined") { tTam = prepararCanvas(tCanvas); pintarTeste(1, 0); }
     if (typeof tmTam !== "undefined") { tmTam = prepararCanvas(tmCanvas); if (!tmAtivo) pintarTimer(0, 0); }
@@ -779,6 +858,7 @@ footer .wrap { display: grid; gap: 22px; }
     elTraco.setAttribute("stroke-dashoffset", (1040 - 1040 * (emVolta / volta)).toFixed(1));
     const halo = fase === 0 ? 14 + 18 * f : fase === 2 ? 32 - 18 * f : fase === 1 ? 32 : 14;
     elHalo.setAttribute("r", halo.toFixed(1));
+    if (elFase.textContent !== FASES[fase]) { try { navigator.vibrate && navigator.vibrate(35); } catch (e) {} }
     elFase.textContent = FASES[fase];
     elConta.textContent = String(segPorFase - Math.floor(emVolta % segPorFase));
     elVoltas.textContent = `${Math.floor(el / volta) + 1} de 4 voltas`;
@@ -1109,6 +1189,30 @@ footer .wrap { display: grid; gap: 22px; }
   document.getElementById("zerar-sim").addEventListener("click", () => { feitos = feitos.map(() => false); guardar("gda-desafio", feitos); zConf.hidden = true; renderDesafio(); });
   renderDesafio();
   function marcarPratica() {}
+
+  /* ---------------- seletor de tempo: destaca o painel escolhido ---------------- */
+  document.querySelectorAll("[data-destaque]").forEach(a => a.addEventListener("click", () => {
+    const alvo = document.getElementById(a.dataset.destaque);
+    setTimeout(() => { alvo.classList.remove("destaque"); void alvo.offsetWidth; alvo.classList.add("destaque"); }, 450);
+  }));
+
+  /* ---------------- barra inferior ativa ---------------- */
+  const abas = [...document.querySelectorAll(".barra-app a")];
+  const zonas = [["inicio", document.querySelector(".abertura")], ["laboratorio", document.getElementById("p-resp")], ["timer", document.getElementById("p-timer")], ["desafio", document.getElementById("desafio")], ["simbolos", document.getElementById("simbolos")]];
+  const ioAbas = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return;
+    const z = zonas.find(([, el]) => el === e.target);
+    if (z) abas.forEach(a => a.classList.toggle("ativo", a.dataset.alvo === z[0]));
+  }), { rootMargin: "-40% 0px -55% 0px" });
+  zonas.forEach(([, el]) => el && ioAbas.observe(el));
+  abas.forEach(a => a.addEventListener("click", () => { try { navigator.vibrate && navigator.vibrate(10); } catch (e) {} }));
+
+  /* ---------------- seções deslizam ao entrar (sempre visíveis) ---------------- */
+  if (!reduz && "IntersectionObserver" in window) {
+    const blocos = [...document.querySelectorAll("section.bloco .wrap")];
+    const ioEntra = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.remove("abaixo"); ioEntra.unobserve(e.target); } }), { rootMargin: "0px 0px -8% 0px" });
+    blocos.forEach(b => { const r = b.getBoundingClientRect(); if (r.top > innerHeight) { b.classList.add("entra", "abaixo"); ioEntra.observe(b); } });
+  }
 
   /* ---------------- menu ativo ---------------- */
   const links = [...document.querySelectorAll(".menu a")];
